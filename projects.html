@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | 구태호 Portfolio</title>
+    <meta name="description" content="백엔드 개발자 구태호의 주요 프로젝트 모음입니다.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="nav-brand" href="index.html">Koo taeho</a>
+            <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="section-title">Projects</h1>
+            <p class="section-subtitle">문제 정의 → 설계 → 구현 → 검증의 흐름으로 정리했습니다.</p>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="project-card featured">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Wearly</h3>
+                        <p class="project-subtitle">AI 기반 스마트 의류 관리 & 패션 추천 플랫폼</p>
+                    </div>
+                    <span class="project-badge">Featured</span>
+                </div>
+
+                <p class="project-description">
+                    OpenAI Vision API를 활용하여 옷장 사진을 자동으로 분류하고, 실시간 날씨 정보를 기반으로
+                    맞춤형 코디를 추천하는 모바일 서비스입니다. 5명의 팀원과 함께 기획부터 배포까지 진행했습니다.
+                </p>
+
+                <div class="project-focus-grid">
+                    <div class="focus-item">
+                        <div class="focus-label">Problem</div>
+                        <p>AI 분류, 날씨 추천, 인증, 알림을 하나의 사용자 흐름으로 안정적으로 연결해야 했습니다.</p>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-label">My Role</div>
+                        <p>백엔드 구조 설계, 인증 통합, 도메인 모델 확장, AI 응답 검증 파이프라인 구현을 주도했습니다.</p>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-label">Result</div>
+                        <p>업로드 → 분석 → 저장 → 추천 → 알림의 end-to-end 흐름을 실제 배포 환경에서 검증했습니다.</p>
+                    </div>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/Melonging/wearly-backend" target="_blank" rel="noopener" class="project-link-btn">Wearly Backend GitHub</a>
+                    <a href="https://github.com/Melonging/wearly-frontend.git" target="_blank" rel="noopener" class="project-link-btn">Wearly Frontend GitHub</a>
+                    <a href="https://www.notion.so/Wearly-2d3183d0d46c803583c8dbe2f5aa65df" target="_blank" rel="noopener" class="project-link-btn">Notion 프로젝트 문서 보기</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Random Chat Application</h3>
+                        <p class="project-subtitle">대학 인증 기반 1-on-1 익명 채팅 서비스</p>
+                    </div>
+                </div>
+
+                <p class="project-description">
+                    대학 이메일 인증을 기반으로 한 대학생 실시간 1-on-1 익명 채팅 서비스입니다.
+                    Socket.IO 양방향 통신, JWT 자동 갱신, 모듈화된 프론트엔드 구조를 적용했습니다.
+                </p>
+
+                <div class="project-focus-grid">
+                    <div class="focus-item">
+                        <div class="focus-label">Problem</div>
+                        <p>실시간 연결 불안정, 인증 만료, 보안 입력 처리 등 채팅 서비스 핵심 리스크를 동시에 해결해야 했습니다.</p>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-label">My Role</div>
+                        <p>실시간 통신 안정화, JWT 자동 갱신, 입력 검증/XSS 방지 로직을 설계·구현했습니다.</p>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-label">Result</div>
+                        <p>재연결·토큰 갱신·상태 분리 구조로 세션 연속성과 코드 유지보수성을 개선했습니다.</p>
+                    </div>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/kootaeho/Websocket.git" target="_blank" rel="noopener" class="project-link-btn">Random Chat GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Bitcoin P2P DEX Monorepo</h3>
+                        <p class="project-subtitle">주문 매칭부터 온체인 브로드캐스트까지 검증한 Bitcoin P2P 거래 프로토타입</p>
+                    </div>
+                    <span class="project-badge">Prototype</span>
+                </div>
+
+                <p class="project-description">
+                    Bitcoin 기반 P2P DEX 모노레포로 주문 생성·매칭·PSBT(Prepare/Sign/Finalize/Broadcast)·실시간 상태 전파를
+                    하나의 거래 상태 모델로 통합한 E2E 프로토타입입니다.
+                </p>
+
+                <div class="project-focus-grid">
+                    <div class="focus-item">
+                        <div class="focus-label">Problem</div>
+                        <p>비수탁 거래 흐름을 일관된 상태 모델로 구성하고 서비스 책임을 명확히 분리해야 했습니다.</p>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-label">My Role</div>
+                        <p>모노레포 구조 설계, 주문/매칭/PSBT 플로우 구현, SSE 이벤트 전파 및 프론트 연동을 담당했습니다.</p>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-label">Result</div>
+                        <p>주문 체결부터 tx 브로드캐스트까지 단계별 이벤트를 추적 가능한 형태로 연결했습니다.</p>
+                    </div>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/kootaeho/DEX-" target="_blank" rel="noopener" class="project-link-btn">Bitcoin DEX GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

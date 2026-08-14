@@ -1,9 +1,12 @@
-// Smooth scroll for navigation links
+// Smooth scroll for in-page anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetSelector = this.getAttribute('href');
+        if (!targetSelector || targetSelector === '#') return;
+
+        const target = document.querySelector(targetSelector);
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -26,30 +29,41 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Active nav link on scroll
+// Active nav link (works for both single-page sections and multi-page links)
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
-const updateActiveNavLink = () => {
+const setActiveByPathname = () => {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href') || '';
+        const cleanHref = href.split('#')[0] || 'index.html';
+        link.classList.toggle('active', cleanHref === currentPath);
+    });
+};
+
+const updateActiveNavLinkByScroll = () => {
+    if (!sections.length) return;
+
     let current = '';
-    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         if (window.pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+        const href = link.getAttribute('href') || '';
+        if (href.startsWith('#')) {
+            link.classList.toggle('active', href === `#${current}`);
         }
     });
 };
 
-window.addEventListener('scroll', updateActiveNavLink);
-updateActiveNavLink();
+setActiveByPathname();
+window.addEventListener('scroll', updateActiveNavLinkByScroll);
+updateActiveNavLinkByScroll();
 
 // Tech tag click effect (optional: can be used for filtering in the future)
 const techTags = document.querySelectorAll('.tech-tag');
